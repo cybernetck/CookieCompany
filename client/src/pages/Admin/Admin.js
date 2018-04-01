@@ -9,7 +9,12 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Admin extends Component {
   state = {
-    firstName: ""
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "",
+    password: ""
   };
 
   componentDidMount() {
@@ -19,7 +24,12 @@ class Admin extends Component {
   loadCustomers= () => {
     API.getCustomers()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ firstName: "", 
+                         lastName: "",
+                          address: "", 
+                             city: "",
+                            state: "",
+                         password: ""})
       )
       .catch(err => console.log(err));
   };
@@ -41,11 +51,13 @@ class Admin extends Component {
     event.preventDefault();
     if (this.state.title && this.state.author) {
       API.saveCustomer({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        address: this.state.address,
+          city: this.state.city,
+          state: this.state.state
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadCustomers())
         .catch(err => console.log(err));
     }
   };
@@ -60,16 +72,16 @@ class Admin extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.firstName}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="First Name"
+                placeholder="First Name (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.lastName}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="Last Name"
+                placeholder="Last Name (required)"
               />
               <TextArea
                 value={this.state.synopsis}
@@ -78,33 +90,38 @@ class Admin extends Component {
                 placeholder="Synopsis (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.firstName && 
+                            this.state.lastName &&
+                            this.state.address &&
+                            this.state.city &&
+                            this.state.state 
+                          )}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Customers</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {/* {this.state.customers.length ? (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                    <Link to={"/customers/" + book._id}>
                       <strong>
                         {book.title} by {book.author}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteCustomer(book._id)} />
                   </ListItem>
                 ))}
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )}
+            )} */}
           </Col>
         </Row>
       </Container>

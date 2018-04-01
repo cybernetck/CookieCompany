@@ -9,11 +9,12 @@ const ProductImage = props => {
  {console.log("Inside of ProductImage. Here's props...", props)}
   var isThereAMainImage = product => {
     fileId = props.product.relationships.main_image.data.id;
-
+     {console.log("FileId..", fileId)}
     file = props.products.included.main_images.find(function(el) {
+    {console.log("File..", file)}
       return fileId === el.id;
     });
-
+     
     return (
       (
         <img

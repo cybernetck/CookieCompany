@@ -13,13 +13,14 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-var db = require("./models/models.js");
+//mySql models
+//var db = require("./models/models.js");
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/customerlist",
+  process.env.MONGODB_URI || "mongodb://admin:cookiestore@ds127899.mlab.com:27899/heroku_d42brf5n",
   {
     useMongoClient: true
   }
