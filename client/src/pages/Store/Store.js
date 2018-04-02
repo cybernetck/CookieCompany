@@ -7,7 +7,7 @@ import Counter from "../../components/Counter";
 class Store extends React.Component {
   state = {
     products: [],
-    imageId: "",
+    imageIdArr:[],
     id : "" ,
     name : "",
     description : "",
@@ -20,31 +20,17 @@ componentDidMount() {
   }
   
     loadProducts = () => {
-    //   API.getBooks()
-    //     .then(res =>
-    //       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //     )
-    //     .catch(err => console.log(err));
-
-    // const Moltin = MoltinGateway({
-    //   client_id: 'XBhWG5uOk67N9EX4dSKoyrYC5JzVlPyfh6FAYFZm6i'
-    // });
-    
-    //Moltin.Authenticate().then((response) => {
-      //console.log('authenticated - yay', response);
-      // eslint-disable-next-line
-      // const products = Moltin.Products.With('main_image').All()
-      API.GetProducts('main_image')
+      API.GetProducts()
       .then(p => {this.setState({products: p.data, 
+                               imageIdArr: p.included.main_images,
                                        id: p.data.id, 
                                      name: p.data.name,
                               description: p.data.description,
                                     price: p.data.price});
        })
        .catch(err => console.log('There was an error:' + err));
-       console.dir(this.state.products);
-     // });
     };
+    
   
     handleInputChange = event => {
       const { name, value } = event.target;
@@ -62,6 +48,7 @@ componentDidMount() {
           <div className="col-md-6" key={p.id}>
           <Product
            product={p}
+           imageIdArr={p.included}
            description={p.description}
            name={p.name}
            id={p.id}

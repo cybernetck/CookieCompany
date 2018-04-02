@@ -83,11 +83,23 @@ class Admin extends Component {
                 name="Last Name"
                 placeholder="Last Name (required)"
               />
-              <TextArea
-                value={this.state.synopsis}
+              <Input
+                value={this.state.address}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="Address"
+                placeholder="Address (required)"
+              />
+               <Input
+                value={this.state.city}
+                onChange={this.handleInputChange}
+                name="city"
+                placeholder="City (required)"
+              />
+              <Input
+                value={this.state.state}
+                onChange={this.handleInputChange}
+                name="State"
+                placeholder="State (required)"
               />
               <FormBtn
                 disabled={!(this.state.firstName && 

@@ -9,9 +9,10 @@ const ProductImage = props => {
  {console.log("Inside of ProductImage. Here's props...", props)}
   var isThereAMainImage = product => {
     fileId = props.product.relationships.main_image.data.id;
-     {console.log("FileId..", fileId)}
+     {console.log("FileId , and file location", fileId, props.products.included.main_images)}
+   
     file = props.products.included.main_images.find(function(el) {
-    {console.log("File..", file)}
+   
       return fileId === el.id;
     });
      
@@ -46,7 +47,7 @@ const ProductImage = props => {
 
   try {
     /* debug */
-    console.log("props description", props.product.description);
+   // console.log("props description", props.product.description);
     return isThereAMainImage(props.product);
   } catch (e) {
     return isThereAFile(props.product);

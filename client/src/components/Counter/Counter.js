@@ -18,7 +18,7 @@ class Counter extends Component {
 
     render(){
         return(
-            <div className="sameLine">
+            <div className="counterdiv">
                 <h5> Quantity </h5>
                 <Button handler={this.increment}> + </Button>
                 <h5> {this.state.count} </h5>
