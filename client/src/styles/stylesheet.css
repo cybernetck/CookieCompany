@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+.centertop {
+    font-family:'Alfa Slab One';
+    text-align: center;
+}
+
+.productspace {
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+.counterdiv{
+    display:flex;
+}
+
+button {
+    padding: 10px;
+    width: 50px;
+}

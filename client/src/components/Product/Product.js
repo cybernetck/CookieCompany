@@ -10,6 +10,7 @@ const Product = props => (
    
     <div className="card" >
     <img src ={image1} alt={props.name} />
+    <ProductImage product={props.product} />
      {console.log("Inside of Product. Here's props...", props)}
         <div className="card-body">
             <h2 className="card-title"> {props.name}
@@ -17,7 +18,7 @@ const Product = props => (
             <hr />
             <h4 className="card-text"> {props.description} </h4>
             <hr />
-         <Counter />
+         <Counter props={props} />
         </div>
     </div>
 

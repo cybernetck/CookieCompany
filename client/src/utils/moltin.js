@@ -7,14 +7,12 @@ const Moltin = MoltinGateway({
 });
 
 Moltin.Authenticate().then((response) => {
-  console.log('authenticated - yay', response);
-
+  //console.log('authenticated - yay', response);
 });
+
 //var exports = (module.exports = {});
 
-export const GetProducts = function(resources) {
-  return Moltin.Products.With(resources).All();
-};
+export const GetProducts = () => Moltin.Products.With('files, main_images').All();
 
 export const GetProduct = function(ID) {
   return Moltin.Products.Get(ID);
