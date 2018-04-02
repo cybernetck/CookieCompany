@@ -10,7 +10,7 @@ const Product = props => (
    
     <div className="card" >
     <img src ={image1} alt={props.name} />
-    <ProductImage product={props.product} />
+    <ProductImage product={props.product} imageArr={props.imageArr}/>
      {console.log("Inside of Product. Here's props...", props)}
         <div className="card-body">
             <h2 className="card-title"> {props.name}

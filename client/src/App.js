@@ -13,6 +13,8 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header> The Cookie Man. </Header>
+          <Jumbotron />
           <Route exact path="/" component={Store} />
           <Route exact path="/customers" component={Admin} />
         </div>
