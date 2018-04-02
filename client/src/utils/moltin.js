@@ -24,7 +24,7 @@ export const GetCategory = ID => Moltin.Files.Get(ID);
  
 export const GetBrands = () => Moltin.Brands.All();
 
-export const GetFile = () => Moltin.Files.Get(ID);
+export const GetFile = (ID) => Moltin.Files.Get(ID);
 
 export const AddCart = (ID, quantity) => Moltin.Cart.AddProduct(ID, quantity);
 
