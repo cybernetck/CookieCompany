@@ -55,7 +55,7 @@ componentDidMount() {
           <CategoryContainer cat={this.state.categories}/>
           <div className="row">
             {this.state.products.map( p =>
-              <div className="col-md-6" key={p.id}>
+              <div className="col-md-6" key={this.state.id}>
                 <Product
                   product={p}
                   imageIdArr={p.included}

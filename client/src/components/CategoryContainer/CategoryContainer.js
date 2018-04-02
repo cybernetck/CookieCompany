@@ -7,17 +7,18 @@ class CategoryContainer extends Component {
         categorySelected: "sweet"
     }
 
-render() {
-    return (
-        <div className="categorydiv">
-         {this.props.cat.map( c =>
-           
-                <Category cat={c}/>
-            )
-         }
-        </div>   
-    );
+        render() {
+            return (
+                <div className="categorydiv">
+                {this.props.cat.map( c =>
+                    <Category cat={c}/>
+                    )
+                }
+                </div>   
+            );
 
-    }
-}    
+        }
+
+}
+    
 export default CategoryContainer;

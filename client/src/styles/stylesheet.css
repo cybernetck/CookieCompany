@@ -13,7 +13,9 @@
 
 .counterdiv{
     display:flex;
+    justify-items: center;
     text-align: center;
+    align-content: space-evenly;
 }
 
 button {
@@ -25,8 +27,10 @@ button {
 .categorydiv {
     height: 100px;
     width: 100%;
+    display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    align-content: space-evenly;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     background-color: blanchedalmond;
 }
