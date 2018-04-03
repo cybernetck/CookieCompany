@@ -10,15 +10,17 @@ class CategoryContainer extends Component {
         render() {
             return (
                 <div className="categorydiv">
-                {this.props.cat.map( c =>
-                    <Category cat={c}/>
-                    )
-                }
+                    {this.props.cat.map( c =>
+                        <Category key={c.id}
+                                  cat={c}
+                        />
+                        )
+                    }
                 </div>   
             );
 
         }
 
 }
-    
+
 export default CategoryContainer;

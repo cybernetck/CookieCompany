@@ -24,6 +24,11 @@ button {
     width: 60px;
 }
 
+.category_button {
+    text-align:center;
+    width:20%;
+    height:100%;
+}
 .categorydiv {
     height: 100px;
     width: 100%;
@@ -33,4 +38,6 @@ button {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     background-color: blanchedalmond;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
 }
