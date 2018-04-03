@@ -2,36 +2,33 @@ import React, {Component} from "react";
 import Product from "./Product";
 
 class ProductContainer extends Component {
-    state = {
-        products: this.props.products,
-        imageIdArr: this.props.imageIdArr,
-        imgLinkArr:[]
+    constructor(props){
+        super(props);
+            this.state = {
+                products: this.props.products,
+                imgLinkArr: this.props.imageIdArr 
+            }
     }
 
-    getImage = () => {
-        let fileId = this.state.props.product.relationships.main_image.data.id;
-        let file  = this.state.imageIdArr.find(function(img){
-           if (fileId === img.id){
-        console.log("fileID inside of getImage...", fileId);
-          this.setState({imgLinkArr: file});
-           }
-      })
-    }
-    componentDidMount() {
-        ;
-        this.setState({
-            imgLinkArr: this.getImage
-        })
-        console.log("imageSetter");
-    }
+    // getImage = () => {
+    //     var fileId = this.state.products.relationships.main_image.data.id;
+    //     var file   = this.state.imageIdArr.find( img => fileId === img.id);
+    //     console.log ("file and fileid inside getImage", fileId, file);
+    //     return file;
+    // }
+
+    // componentDidMount() {
+    //  console.log("images", props.imageIdArr);
+    //  console.log("product container", this.state);
+    // }
 
       render() {
         return (
             <div className="row">
-                {this.state.products.map((p,index) =>
-                    <div className="col-md-6"  key={index} >
+                {this.props.products.map((p) =>
+                    <div className="col-md-6"  key={p.id} >
                         <Product products={p}/>
-                    </div>)}
+                </div>)}
             </div>
         );
     }

@@ -8,8 +8,8 @@ const image1 = "https://s19.postimg.org/5y6n7iv83/cookies2.jpg";
 const Product = props => (
    
     <div className="card" >
-    {/* <img imagesrc={props.imagesrc} alt={props.name} /> */}
-    <ProductImage product={props.product}/>
+    <img src={image1} alt={props.name} />
+    {/* <ProductImage product={props.product}/> */}
      {console.log("Inside of Product. Here's props...", props)}
         <div className="card-body">
             <h2 className="card-title"> 
