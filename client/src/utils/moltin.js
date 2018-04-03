@@ -28,9 +28,9 @@ export const GetFile = (ID) => Moltin.Files.Get(ID);
 
 export const AddCart = (ID, quantity) => Moltin.Cart.AddProduct(ID, quantity);
 
-export const UpdateCartPlus = (ID, quantity) => Moltin.Cart.UpdateItemQuantity(ID, quantity + 1);
+export const UpdateCartPlus = (ID, quantity) => Moltin.Cart().UpdateItemQuantity(ID, quantity + 1);
 
-export const UpdateCartMinus = (ID, quantity) => Moltin.Cart.UpdateItemQuantity(ID, quantity - 1);
+export const UpdateCartMinus = (ID, quantity) => Moltin.Cart().UpdateItemQuantity(ID, quantity - 1);
 
 export const UpdateCart = (ID, quantity) => Moltin.Cart.UpdateItemQuantity(ID, quantity);
 
