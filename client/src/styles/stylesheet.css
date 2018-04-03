@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
-.centertop {
+.appheader {
     font-family:'Alfa Slab One';
-    text-align: center;
+    margin-left: 20px;
 }
 
 .productspace {
@@ -12,10 +12,11 @@
 }
 
 .counterdiv{
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    text-align: center;
-    align-content: space-evenly;
+    padding-bottom: 30px;
+    /* align-content: space-evenly; */
 }
 
 button {

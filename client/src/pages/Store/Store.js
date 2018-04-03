@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { gateway as MoltinGateway } from '@moltin/sdk';
 import * as API from "../../utils/moltin";
 import Product from "../../components/Product";
 import CategoryContainer from "../../components/CategoryContainer";
@@ -38,7 +37,7 @@ componentDidMount() {
    loadCategories = () => {
      API.GetCategories()
      .then(c => {this.setState({categories: c.data});
-     console.log("categories..", c);
+     //console.log("categories..", c);
     })
    }
 
@@ -70,7 +69,7 @@ componentDidMount() {
                   id={p.id}
                 /> */}
               </div>
-            )
+          
         </div>
       )
     }

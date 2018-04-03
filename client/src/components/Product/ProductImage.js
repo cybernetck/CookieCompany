@@ -6,7 +6,7 @@ const ProductImage = props => {
   let placeholder =
     'http://via.placeholder.com/200x150';
 
- {console.log("Inside of ProductImage. Here's props...", props)}
+ console.log("Inside of ProductImage. Here's props...", props)
   var isThereAMainImage = product => {
     fileId = props.product.relationships.main_image.data.id;
      {console.log("FileId , and file location", fileId, props.products.included.main_images)}

@@ -3,7 +3,9 @@ import React from "react";
 
 const Header = ({ children }) => (
   <div>
-    <h1 className="centertop"> {children} </h1>
+    <span>
+    <h1 className="appheader"> {children} </h1>
+    </span>
   </div>
 );
 
