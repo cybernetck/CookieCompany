@@ -20,7 +20,7 @@ const Product = props => (
                 {props.products.description}
             </h4>
             <hr/>
-         <Counter props={props} />
+         <Counter {...props} />
         </div>
     </div>
 
