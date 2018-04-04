@@ -9,7 +9,6 @@
 
 .cart_header{
     display:grid;
-    /* grid-template-columns: 3fr; */
     justify-content: right;
     margin-right: 40px;
 }
@@ -22,10 +21,23 @@
 .counter_div{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* justify-items: center; */
     padding-bottom: 30px;
     /* align-content: space-evenly; */
 }
+
+.nav-tabs{
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr 1fr;
+     /* align-content: space-evenly; */
+    /* grid-column-gap: 2px; */
+    justify-items: right;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    background-color: blanchedalmond; 
+} 
 
 button {
     padding: 10px;
