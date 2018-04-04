@@ -1,12 +1,14 @@
+import "./styles/stylesheet.css";
 import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./styles/stylesheet.css";
 import Header from "./components/Header";
-import Jumbotron from "./components/Jumbotron";
-import Admin from "./pages/Admin";
-import Store from "./pages/Store";
+//import Jumbotron from "./components/Jumbotron";
 import ProductImage from "./components/Product/ProductImage";
 import Nav from "./components/Nav";
+import Login from "./pages/Login";
+import Checkout from "./pages/Checkout";
+import Store from "./pages/Store";
+import CartContainer from "./components/CartContainer";
 
 class App extends Component {
   render() {
@@ -14,9 +16,9 @@ class App extends Component {
       <Router>
         <div>
           <Header> The Cookie Man. </Header>
-          <Jumbotron />
-          <Route exact path="/" component={Store} />
-          <Route exact path="/customers" component={Admin} />
+          <Route exact path="/"         component={Store} />
+          <Route exact path="/checkout" component={CartContainer} />
+          <Route exact path="/customer" component={Login} />
         </div>
       </Router>
     );

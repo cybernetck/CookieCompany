@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as API from "../../utils/moltin";
-import Product from "../../components/Product";
+//import Product from "../../components/Product";
 import CategoryContainer from "../../components/CategoryContainer";
 import Counter from "../../components/Counter";
 import ProductContainer from "../../components/Product/ProductContainer";
@@ -14,12 +14,13 @@ class Store extends React.Component {
     description : "",
     price : "",
     count : 0 ,
+    cart : "",
     categories: []
 };
 
 componentDidMount() {
-  this.loadProducts();
   this.loadCategories();
+  this.loadProducts();
   }
   
     loadProducts = () => {
@@ -37,7 +38,6 @@ componentDidMount() {
    loadCategories = () => {
      API.GetCategories()
      .then(c => {this.setState({categories: c.data});
-     //console.log("categories..", c);
     })
    }
 
@@ -47,7 +47,6 @@ componentDidMount() {
         [name]: value
       });
     };
-
   
     render(){
       return (
