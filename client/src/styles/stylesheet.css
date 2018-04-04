@@ -1,10 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
+.centered_text{
+    text-align:center;
+}
+
 .app_header {
     font-family:'Alfa Slab One';
-    margin-left: 20px;
-    display: inline;
+    height: 20px;
+    margin-left: 30px;
 }
 
 .cart_header{
@@ -50,6 +54,15 @@ button {
     width:20%;
     height:100%;
 }
+
+.subpage_header{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:100px;
+    background-color: blanchedalmond;
+}
+
 .category_div {
     height: 100px;
     width: 100%;
