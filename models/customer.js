@@ -2,11 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const customerSchema = new Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  address: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
+  userName: { type: String, required: true },
+  password: { type: String, required: true },
+  firstName: { type: String, required: false },
+  lastName: { type: String, required: false},
+  address: { type: String, required: false},
+  city: { type: String, required: false },
+  state: { type: String, required: false },
   lastLoginDate: { type: Date, default: Date.now }
 });
 

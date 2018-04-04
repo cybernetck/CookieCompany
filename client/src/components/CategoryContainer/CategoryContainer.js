@@ -9,7 +9,7 @@ class CategoryContainer extends Component {
 
         render() {
             return (
-                <div className="categorydiv">
+                <div className="category_div">
                     {this.props.cat.map( c =>
                         <Category key={c.id}
                                   cat={c}

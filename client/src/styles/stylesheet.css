@@ -1,20 +1,28 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
-.appheader {
+.app_header {
     font-family:'Alfa Slab One';
     margin-left: 20px;
+    display: inline;
 }
 
-.productspace {
+.cart_header{
+    display:grid;
+    /* grid-template-columns: 3fr; */
+    justify-content: right;
+    margin-right: 40px;
+}
+
+.product_space {
     max-width:1000px;
     margin: 0 auto;
 }
 
-.counterdiv{
+.counter_div{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
+    /* justify-items: center; */
     padding-bottom: 30px;
     /* align-content: space-evenly; */
 }
@@ -30,7 +38,7 @@ button {
     width:20%;
     height:100%;
 }
-.categorydiv {
+.category_div {
     height: 100px;
     width: 100%;
     display: grid;
