@@ -9,7 +9,7 @@ const Navpills = (props) => (
     <li className={window.location.pathname === "/about" ? "active" : ""}>
       <Link to="/about">About</Link>
     </li>
-    <li className={window.location.pathname === "/blog" ? "active" : ""}>
+    <li className={window.location.pathname === "/customer" ? "active" : ""}>
       <Link to="/customer">Login</Link>
     </li>
     {/* <li className={window.location.pathname === "/contact" ? "active" : ""}>
