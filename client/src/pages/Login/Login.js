@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 
+// "5ac5172092328d6002fb8779"
 class Login extends Component {
   state = {
     users: [],
-    _id: "5ac5172092328d6002fb8779",
-    password: "",
+    _id: "",
     isLoggedIn: "",
     userLoggedIn: ""
     }
@@ -59,22 +59,21 @@ class Login extends Component {
 
   handleLogin = event => {
     event.preventDefault();
-    console.log("handleLogin");
     API.getCustomer(this.state._id)
-    .then(res => this.setState({userLoggedIn: res.data.userName}))
-    .then(this.setState({isLoggedIn:true}))
-    .then(console.log("Hi,", this.state.userLoggedIn))
+    .then(res =>
+      (res.data) ?
+        console.log("here's what we got back", res.data):
+        console.log("sorry, not on database"))
     .catch(err => console.log(err))
     }
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-   
-              <h1>Log in</h1>
- 
+      <div>
+        <div className="subpage_header">
+            <h1>Log in</h1>
+         </div>
+            
             {/* <form>
               <Input
                 value={this.state.userName}
@@ -118,12 +117,10 @@ class Login extends Component {
                           )}
                 onClick={this.handleLogin}
               >
-                Sub
+                Submit
               </FormBtn>
             </form>
-          </Col>
-        </Row>
-      </Container>
+        </div>
     );
   }
 }
