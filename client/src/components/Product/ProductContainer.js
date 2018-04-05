@@ -6,7 +6,6 @@ class ProductContainer extends Component {
         super(props);
             this.state = {
                 products: this.props.products,
-             // productCount: { productId:"", productCount },
                 imgLinkArr: this.props.imageIdArr 
             }
     }
