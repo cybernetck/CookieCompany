@@ -19,7 +19,6 @@ class Counter extends React.Component {
         
     handler(e) {
    console.log("here's E, yall...", e);
-
         this.setState({
             count: this.state.count
         })
@@ -49,10 +48,6 @@ class Counter extends React.Component {
         .then(c =>{this.setState({count:this.state.count})})
     }
 
-    // updateCart = () => {
-    //     API.UpdateCart
-    // }
-
     updateCartIncrease = () => {
         API.UpdateCartPlus(this.state.products.id, this.state.count+1)
         .then(c => {this.setState({count: this.state.count})
@@ -74,7 +69,7 @@ class Counter extends React.Component {
     render(){
         return(
             <div>
-                <h5> Quantity </h5>
+                {/*<h5> Quantity </h5> */}
                     <div className="counter_div">
                         <Button handler={this.addToCartIncrease}> + </Button>
                             <h5> {this.state.count} </h5>

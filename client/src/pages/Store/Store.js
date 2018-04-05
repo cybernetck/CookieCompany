@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as API from "../../utils/moltin";
-//import Product from "../../components/Product";
 import CategoryContainer from "../../components/CategoryContainer";
 import Counter from "../../components/Counter";
 import ProductContainer from "../../components/Product/ProductContainer";
@@ -9,13 +8,13 @@ class Store extends React.Component {
   state = {
     products:[],
     imageIdArr:[],
+    categories: [],
+    cart:[],
     id : "",
     name : "",
     description : "",
     price : "",
-    count : 0 ,
-    cart : "",
-    categories: []
+    count : 0 
 };
 
 componentDidMount() {
@@ -57,18 +56,7 @@ componentDidMount() {
                         products={this.state.products}
                      imageIdArr={this.state.imageIdArr}
                         />
-
-            {/* {this.state.products.map( p =>
-              <div className="col-md-6" key={this.state.id}>
-                <Product
-                  product={p}
-                  imageIdArr={p.included}
-                  description={p.description}
-                  name={p.name}
-                  id={p.id}
-                /> */}
               </div>
-          
         </div>
       )
     }

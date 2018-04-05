@@ -1,15 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
+.centered_text{
+    text-align:center;
+}
+
 .app_header {
     font-family:'Alfa Slab One';
-    margin-left: 20px;
-    display: inline;
+    height: 20px;
+    margin-left: 30px;
 }
 
 .cart_header{
     display:grid;
-    /* grid-template-columns: 3fr; */
     justify-content: right;
     margin-right: 40px;
 }
@@ -22,10 +25,23 @@
 .counter_div{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* justify-items: center; */
     padding-bottom: 30px;
     /* align-content: space-evenly; */
 }
+
+.nav-tabs{
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr 1fr;
+     /* align-content: space-evenly; */
+    /* grid-column-gap: 2px; */
+    justify-items: right;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    background-color: blanchedalmond; 
+} 
 
 button {
     padding: 10px;
@@ -38,6 +54,15 @@ button {
     width:20%;
     height:100%;
 }
+
+.subpage_header{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:100px;
+    background-color: blanchedalmond;
+}
+
 .category_div {
     height: 100px;
     width: 100%;

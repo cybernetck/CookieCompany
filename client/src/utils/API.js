@@ -2,11 +2,12 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getCustomers: function() {
+  getAllCustomers: function() {
     return axios.get("/api/customer");
   },
   // Gets the book with the given id
   getCustomer: function(id) {
+    console.log("Getting someone... yea!", id);
     return axios.get("/api/customer/" + id);
   },
   // Deletes the book with the given id
