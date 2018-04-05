@@ -5,22 +5,30 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 
+// "5ac5172092328d6002fb8779"
 class Login extends Component {
   state = {
-   userName: "",
-    password: ""
-  };
+    users: [],
+    _id: "",
+    isLoggedIn: "",
+    userLoggedIn: ""
+    }
+
+  handleLogout = () => {
+    this.setState({isLoggedIn: false})
+  }
+
+  handleLogIn = () => {
+    this.setState({isLoggedIn: true})
+  }
 
   componentDidMount() {
     this.loadCustomer();
   }
 
   loadCustomer = () => {
-    API.getCustomer()
-      .then(res =>
-        this.setState({ userName: "", 
-                         password:""})
-      )
+    API.getAllCustomers()
+      .then(res => this.setState({users: res.data, userName:"", password:"" }))
       .catch(err => console.log(err));
   };
 
@@ -49,15 +57,24 @@ class Login extends Component {
     }
   };
 
+  handleLogin = event => {
+    event.preventDefault();
+    API.getCustomer(this.state._id)
+    .then(res =>
+      (res.data) ?
+        console.log("here's what we got back", res.data):
+        console.log("sorry, not on database"))
+    .catch(err => console.log(err))
+    }
+
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-   
-              <h1>Log in</h1>
- 
-            <form>
+      <div>
+        <div className="subpage_header">
+            <h1>Log in</h1>
+         </div>
+            
+            {/* <form>
               <Input
                 value={this.state.userName}
                 onChange={this.handleInputChange}
@@ -79,10 +96,31 @@ class Login extends Component {
               >
                 Submit
               </FormBtn>
+            </form> */}
+            <form>
+              <Input
+                value={this.state.userName}
+                onChange={this.handleInputChange}
+                name="userName"
+                placeholder="User Name (required)"
+              />
+              <Input
+                value={this.state.lastName}
+                onChange={this.handleInputChange}
+                name="password"
+                placeholder="Password (required)"
+              />
+             
+              <FormBtn
+                disabled={!(this.state.userName && 
+                            this.state.password  
+                          )}
+                onClick={this.handleLogin}
+              >
+                Submit
+              </FormBtn>
             </form>
-          </Col>
-        </Row>
-      </Container>
+        </div>
     );
   }
 }
