@@ -20,7 +20,7 @@ const Product = props => (
                 {props.products.description}
             </h4>
             <hr/>
-         <Counter {...props} />
+          <h4> Add to Cart </h4>
          <Link to={"/checkout"}>
             <i className="material-icons">add_shopping_cart</i>    
         </Link>
