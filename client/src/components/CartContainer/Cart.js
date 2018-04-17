@@ -1,9 +1,13 @@
 import React from "react";
+ 
+import Counter from "../Counter";
 
 const Cart = props => (
 
     <div>
-         <h5>  </h5>
+    
+        <Counter />
+    
     </div>
 
     

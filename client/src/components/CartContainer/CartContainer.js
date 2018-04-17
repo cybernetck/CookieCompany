@@ -34,7 +34,7 @@ class CartContainer extends Component {
                     </div>
 
                     <div>
-                    <Cart />
+                    <Cart products={this.state.products} />
                     {/* <button onClick={()=>this.resetCart}> Reset </button>  */}
                     <Link to={"/"}>
                     <button className="category_button" onClick={()=>this.resetCart}> Keep Shopping! </button> 
