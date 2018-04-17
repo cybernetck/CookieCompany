@@ -13,14 +13,8 @@ class ProductContainer extends Component {
     getImage = () => {
         // var fileId = this.state.products.relationships.main_image.data.id;
         // var file   = this.state.imageIdArr.find( img => fileId === img.id);
-    
         console.log("inside getImage");
     }
-
-    // componentDidMount() {
-    //  console.log("images", props.imageIdArr);
-    //  console.log("product container", this.state);
-    // }
 
       render() {
         return (

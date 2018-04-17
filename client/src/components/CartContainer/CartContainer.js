@@ -28,15 +28,18 @@ class CartContainer extends Component {
         
         render() {
             return (
-                <div className="counter_div">
-                {!this.state.cart}?
-                    <h1> Cart is empty </h1>
-                    <Cart />
-                    
-                    <button onClick={()=>this.resetCart}> Reset </button> 
+                <div>
+                    <div className="subpage_header">
+                        <h1> Cart is empty </h1>
+                    </div>
+
+                    <div>
+                    <Cart products={this.state.products} />
+                    {/* <button onClick={()=>this.resetCart}> Reset </button>  */}
                     <Link to={"/"}>
                     <button className="category_button" onClick={()=>this.resetCart}> Keep Shopping! </button> 
                     </Link>
+                    </div>
                 </div>   
             );
 
